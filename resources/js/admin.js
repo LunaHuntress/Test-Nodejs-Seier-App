@@ -48,7 +48,11 @@ export function initAdmin(socket) {
                             <input type="hidden" name="purchaseId" value="${purchase._id}">
                             <select name="status" onchange="this.form.submit()"
                                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-
+                               <option value="purchase_placed"
+                                    ${purchase.status === 'purchase_placed' ? 'selected' : ''}>
+                                    Placed</option>
+                                <option value="confirmed" ${purchase.status === 'confirmed' ? 'selected' : ''}>
+                                    Confirmed</option>
                                 <option value="prepared" ${purchase.status === 'prepared' ? 'selected' : ''}>
                                     Prepared</option>
                                 <option value="delivered" ${purchase.status === 'delivered' ? 'selected' : ''}>
