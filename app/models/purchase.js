@@ -12,7 +12,7 @@ const purchaseSchema = new Schema({
     customername: { type: String, required: true},
     address: { type: String, required: true},
     // paymentType: { type: String, default: 'COD'}
-    status: { type: String, default: 'purchase_placed'}
+    status: { type: String, default: 'prepared'}
 }, { timestamps: true })
 
 const List = mongoose.model('Purchase', purchaseSchema)
