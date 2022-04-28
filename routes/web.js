@@ -46,6 +46,7 @@ function initRoutes(app) {
     app.post('/purchases', auth, purchaseController().store)
     app.get('/customers/purchases', auth, purchaseController().index)
     app.get('/customer/purchases/:id', auth, purchaseController().show)
+   
     
 
     // Admin routes aka courier
