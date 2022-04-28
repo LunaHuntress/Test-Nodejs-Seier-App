@@ -151,23 +151,17 @@ section.status {
     color: inherit;
 }
 
-// .status-box ul li:nth-child(1) span:before {
-//     content: '\f46c';
-// }
 
-// .status-box ul li:nth-child(2) span:before {
-//     content: '\f560';
-// }
 
-.status-box ul li:nth-child(3) span:before {
+.status-box ul li:nth-child(1) span:before {
     content: '\f4b8';
 }
 
-.status-box ul li:nth-child(4) span:before {
+.status-box ul li:nth-child(2) span:before {
     content: '\f0d1';
 }
 
-.status-box ul li:nth-child(5) span:before {
+.status-box ul li:nth-child(3) span:before {
     content: '\f582';
 }
 
