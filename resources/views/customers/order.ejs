@@ -14,7 +14,9 @@
                 <h1><%= tracking.item.name %></h1>
             </div>
             <span class="flex-1"><%= tracking.qty %> Pcs</span>
-            <!-- <span class="font-bold text-lg"><%= tracking.item.price * tracking.qty %></span> -->
+            <span class="font-bold text-lg"><%= tracking.item.measurements %></span>
+            <span class="font-bold text-lg"><%= tracking.item.measurements * tracking.qty %>
+            </span>
             </div>
             <% } %>
         </div>
@@ -23,6 +25,10 @@
             <div>
                 <span class="text-lg font-bold">Total Quantity:</span>
                 <span class="amount text-2xl font-bold ml-2"><%= session.order.totalQty %></span>
+                <span class="text-lg font-bold">Total CBM:</span>
+                <span class="amount text-2xl font-bold ml-2">
+                    <%= session.order.allTotal %>
+                </span>
             </div>
 
             <% if(user) { %>

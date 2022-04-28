@@ -16,6 +16,7 @@ function orderController() {
                 req.session.order = {
                     items: {},
                     totalQty: 0,
+                    allTotal: 0,
                 }
                 
             }
@@ -29,9 +30,11 @@ function orderController() {
                          qty: 1
                      }
                      order.totalQty = order.totalQty + 1
+                     cart.allTotal = cart.allTotal + req.body.measurements
                  } else {
                      order.items[req.body._id].qty = order.items[req.body._id].qty + 1
                      order.totalQty = order.totalQty + 1
+                     cart.allTotal = cart.allTotal + req.body.measurements
                  }
 
 
