@@ -14,7 +14,7 @@
     "dev": "nodemon server.js",
     "serve": "node server.js",
     "development": "mix",
-    "watch": "webpack --watch",
+    "watch": "mix watch",
     "production": "mix --production",
     "build": "webpack --mode=production --node-env=production",
     "build:dev": "webpack --mode=development",

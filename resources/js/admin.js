@@ -30,6 +30,14 @@ export function initAdmin(socket) {
         }).join('')
     }
     
+    // function renderCbm(allTotal) {
+    //     let parsedCbm = Object.values(allTotal)
+    //     return parsedCbm.map((listCbm) => {
+    //         return `
+    //             <p>Total CBM: ${listCbm.allTotal}</p>
+    //         `
+    //     }).join('')
+    // }
 
     function generateMarkup(purchases) {
         return purchases.map(purchase => {
@@ -38,6 +46,7 @@ export function initAdmin(socket) {
                 <td class="border px-4 py-2 text-green-900">
                     <p>${purchase._id}</p>
                     <div>${renderItems(purchase.items)}</div>
+                   
                 </td>
                 <td class="border px-4 py-2">${purchase.prodmanagerId.name}</td>
                 <td class="border px-4 py-2">${purchase.customername}</td>

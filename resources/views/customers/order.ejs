@@ -4,6 +4,8 @@
         <div class="flex items-center border-b border-gray-300 pb-4">
             <img class="w-9 h-10 m-2" src="../../../public/img/2639879_order_icon.png" alt="">
             <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
+            <span class="flex-1 ml-56 font-bold text-lg float-right">CBM</span>
+            <span class="flex-1 ml-4 font-bold text-lg float-right">Total CBM</span>
         </div>
 
         <div class="order-list">
@@ -14,9 +16,11 @@
                 <h1><%= tracking.item.name %></h1>
             </div>
             <span class="flex-1"><%= tracking.qty %> Pcs</span>
-            <span class="font-bold text-lg"><%= tracking.item.measurements %></span>
-            <span class="font-bold text-lg"><%= tracking.item.measurements * tracking.qty %>
-            </span>
+            <span class="font-bold text-lg"><%= parseFloat(tracking.item.length * tracking.item.width * tracking.item.height/61024).toFixed(3) %> m3</span>
+            <div>
+                <span class="flex-1 ml-4 font-bold text-lg">
+                    <%= parseFloat(tracking.item.length * tracking.item.width * tracking.item.height/61024).toFixed(3) * tracking.qty %> m3 </span>
+            </div>
             </div>
             <% } %>
         </div>
@@ -25,9 +29,12 @@
             <div>
                 <span class="text-lg font-bold">Total Quantity:</span>
                 <span class="amount text-2xl font-bold ml-2"><%= session.order.totalQty %></span>
-                <span class="text-lg font-bold">Total CBM:</span>
+                
+            </div>
+            <div>
+                <span class="text-lg font-bold">Grand Total CBM:</span>
                 <span class="amount text-2xl font-bold ml-2">
-                    <%= session.order.allTotal %>
+                    <%= session.order.allTotal %> m3
                 </span>
             </div>
 
