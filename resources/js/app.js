@@ -48,6 +48,7 @@ let statuses = document.querySelectorAll('.status_line')
 let hiddenInput = document.querySelector('#hiddenInput')
 let purchase = hiddenInput ? hiddenInput.value : null
 purchase = JSON.parse(purchase)
+
 let time = document.createElement('small')
 let updateTime = document.createElement('small')
 

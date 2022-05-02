@@ -57,7 +57,10 @@ function purchaseController () {
             } 
             res.redirect('/')
         },
-
+        
+        // async display(req,res) {
+        //     res.render('customers/record')
+        // }
         
     }
 }

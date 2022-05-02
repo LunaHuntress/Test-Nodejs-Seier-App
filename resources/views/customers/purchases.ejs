@@ -25,6 +25,8 @@
                     <th class="px-4 py-2 text-left">Purchase Order Number</th>
                      <th class="px-4 py-2 text-left">Buyer Name</th>
                     <th class="px-4 py-2 text-left">Address</th>
+                    <!-- <th class="px-4 py-2 text-left">Status</th>
+                    <th class="px-4 py-2 text-left">Updated Time on Status</th> -->
                     <!-- <th class="px-4 py-2 text-left">Date Ordered</th> -->
                 </tr>
             </thead>
@@ -44,11 +46,44 @@
                             <td class="border px-4 py-2">
                                 <%= purchase.address %>
                             </td>
+                           
+                            <!-- <td class="border px-4 py-2">
+                                Preparation for Loading
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= time1 = new Date().toLocaleString() %>
+                            </td>
+                           
                             <!-- <td class="border px-4 py-2">
                                 <%= moment(purchase.createdAt).format('DD-MM-YYYY') %>
                             </td> -->
                         </tr>
+
+                        <!-- <tr>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2">
+                                Out for Delivery
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= time2 = new Date().toLocaleString() %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2">
+                                Delivered
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= time3 = new Date().toLocaleString() %>
+                            </td>
+                        </tr> --> 
                   <%  }) %>
+                
+                        
                 
                 <% } else { %>
                         <tr>

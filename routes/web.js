@@ -4,7 +4,7 @@ const homeController = require ('../app/http/controllers/homeController')
 const purchaseController = require('../app/http/controllers/customers/purchaseController')
 const adminPurchaseController = require('../app/http/controllers/admin/purchaseController')
 const statusController = require('../app/http/controllers/admin/statusController')
-
+// const recordController = require('../app/http/controllers/customers/recordController')
 
 // Middlewares
 const guest = require('../app/http/middleware/guest')
@@ -46,6 +46,7 @@ function initRoutes(app) {
     app.post('/purchases', auth, purchaseController().store)
     app.get('/customers/purchases', auth, purchaseController().index)
     app.get('/customer/purchases/:id', auth, purchaseController().show)
+    // app.get('/record', auth, purchaseController().display)
    
     
 
