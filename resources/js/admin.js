@@ -44,11 +44,12 @@ export function initAdmin(socket) {
             return `
                 <tr>
                 <td class="border px-4 py-2 text-green-900">
-                    <p>${purchase._id}</p>
+                    
                     <div>${renderItems(purchase.items)}</div>
                    
                 </td>
-                <td class="border px-4 py-2">${purchase.prodmanagerId.name}</td>
+                
+                <td class="border px-4 py-2">${purchase.purchaseorder}</td>
                 <td class="border px-4 py-2">${purchase.customername}</td>
                 <td class="border px-4 py-2">${purchase.address}</td>
                 <td class="border px-4 py-2">
@@ -78,9 +79,7 @@ export function initAdmin(socket) {
                         </div>
                     </div>
                 </td>
-                <td class="border px-4 py-2">
-                    ${moment(purchase.createdAt).format('hh:mm A')}
-                </td>
+                
                 
             </tr>
         `

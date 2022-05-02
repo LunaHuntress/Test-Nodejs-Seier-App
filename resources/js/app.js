@@ -49,25 +49,39 @@ let hiddenInput = document.querySelector('#hiddenInput')
 let purchase = hiddenInput ? hiddenInput.value : null
 purchase = JSON.parse(purchase)
 let time = document.createElement('small')
+let updateTime = document.createElement('small')
 
 function updateStatus(purchase) {
     statuses.forEach((status) => {
-        status.classList.remove('step-completed')
-        status.classList.remove('current')
+         status.classList.remove('step-completed')
+         status.classList.remove('current')
+        // updatetime.innerText = moment(purchase.updatedAt).format('DD-MM-YYYY hh:mm A')
+        // status.appendChild(updateTime)
     })
     let stepCompleted = true;
     statuses.forEach((status) => {
         let dataProp = status.dataset.status
+        // if(dataProp === purchase.status.stepCompleted){
+        //     stepCompleted = true
+        //     updatetime.innerText = moment(purchase.updatedAt).format('DD-MM-YYYY hh:mm A')
+        //     status.appendChild(updateTime)
+        //     if (status.previousElementSibling) {
+        //         status.previousElementSibling.classList.add('step-completed')
+        //     }
+        // }
         if (stepCompleted) {
             status.classList.add('step-completed')
+            
+            
         }
         if (dataProp === purchase.status) {
             stepCompleted = false
-            time.innerText = moment(purchase.updatedAt).format('hh:mm A')
+            time.innerText = moment(purchase.updatedAt).format('DD-MM-YYYY hh:mm A')
             status.appendChild(time)
-            if (status.nextElementSibling) {
-                status.nextElementSibling.classList.add('current')
-            }
+             if (status.nextElementSibling) {
+                 status.nextElementSibling.classList.add('current')
+                
+             }
         }
     })
 }

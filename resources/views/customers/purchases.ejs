@@ -21,18 +21,22 @@
         <table class="w-full table-auto bg-white"> 
             <thead>
                 <tr>
-                    <th class="px-4 py-2 text-left">Purchases</th>
-                     <th class="px-4 py-2 text-left">Customer Name</th>
+                    <!-- <th class="px-4 py-2 text-left">Purchases</th> -->
+                    <th class="px-4 py-2 text-left">Purchase Order Number</th>
+                     <th class="px-4 py-2 text-left">Buyer Name</th>
                     <th class="px-4 py-2 text-left">Address</th>
-                    <th class="px-4 py-2 text-left">Time</th>
+                    <!-- <th class="px-4 py-2 text-left">Date Ordered</th> -->
                 </tr>
             </thead>
             <tbody>
                 <% if(purchases.length) { %>
                     <% purchases.forEach((purchase) => { %>
                         <tr>
-                            <td class="border px-4 py-2">
+                            <!-- <td class="border px-4 py-2">
                                 <a class="link" href="/customer/purchases/<%= purchase._id %>"><%= purchase._id %></a>
+                            </td> -->
+                            <td class="border px-4 py-2">
+                                <a class="link" href="/customer/purchases/<%= purchase._id %>"><%= purchase.purchaseorder %></a>
                             </td>
                              <td class="border px-4 py-2">
                                 <%= purchase.customername %>
@@ -40,9 +44,9 @@
                             <td class="border px-4 py-2">
                                 <%= purchase.address %>
                             </td>
-                            <td class="border px-4 py-2">
-                                <%= moment(purchase.createdAt).format('hh:mm A') %>
-                            </td>
+                            <!-- <td class="border px-4 py-2">
+                                <%= moment(purchase.createdAt).format('DD-MM-YYYY') %>
+                            </td> -->
                         </tr>
                   <%  }) %>
                 

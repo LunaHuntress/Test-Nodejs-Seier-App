@@ -10,8 +10,8 @@ function purchaseController () {
             //     return res.redirect('/order')
             // }
 
-            const { customername, address } = req.body
-            if(!customername || !address) {
+            const { purchaseorder, customername, address } = req.body
+            if(!purchaseorder || !customername || !address) {
                 req.flash('error', 'All fields are required')
                 return res.redirect('/order')
             }
@@ -20,6 +20,7 @@ function purchaseController () {
                 role: req.user.role,
                 prodmanagerId: req.user._id,
                 items: req.session.order.items,
+                purchaseorder,
                 customername,
                 address 
             })

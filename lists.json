@@ -4,55 +4,36 @@
             "$oid": "6260cb68b80bf9e77e51fdab"
         },
         "name": "Ticao Host Chair",
-        "image": "C1.jpg",
-        "length": "17",
-        "width": "19",
-        "height": "32",
-        "measurements": "0.169"
+        "image": "C1.jpg"
+        
     },
     {
         "_id": {
             "$oid": "6260cc68b80bf9e77e51fdac"
         },
         "name": "Escana Host Chair",
-        "image": "C2.jpg",
-        "length": "17",
-        "width": "19",
-        "height": "32",
-        "measurements": "0.169"
+        "image": "C2.jpg"
     },
     {
         "_id": {
             "$oid": "6260cc70b80bf9e77e51fdad"
         },
         "name": "Jao Dining Chair",
-        "image": "C3.jpg",
-        "length": "17",
-        "width": "19",
-        "height": "32",
-        "measurements": "0.169"
+        "image": "C3.jpg"
     },
     {
         "_id": {
             "$oid": "6260cc7ab80bf9e77e51fdae"
         },
         "name": "Calayan",
-        "image": "C4.jpg",
-        "length": "17",
-        "width": "19",
-        "height": "32",
-        "measurements": "0.169"
+        "image": "C4.jpg"
     },
     {
         "_id": {
             "$oid": "6260cc7eb80bf9e77e51fdaf"
         },
         "name": "Madeira",
-        "image": "C5.jpg",
-        "length": "17",
-        "width": "19",
-        "height": "32",
-        "measurements": "0.169"
+        "image": "C5.jpg"
     }
     
 ]

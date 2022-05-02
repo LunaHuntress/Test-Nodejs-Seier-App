@@ -10,6 +10,7 @@ const purchaseSchema = new Schema({
     },
     items: { type: Object, required: true },
     // allTotal: { type: Number, required: true},
+    purchaseorder: { type: String, required: true },
     customername: { type: String, required: true},
     address: { type: String, required: true},
     // paymentType: { type: String, default: 'COD'}

@@ -2217,7 +2217,7 @@ function initAdmin(socket) {
 
   function generateMarkup(purchases) {
     return purchases.map(function (purchase) {
-      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">\n                    <p>".concat(purchase._id, "</p>\n                    <div>").concat(renderItems(purchase.items), "</div>\n                   \n                </td>\n                <td class=\"border px-4 py-2\">").concat(purchase.prodmanagerId.name, "</td>\n                <td class=\"border px-4 py-2\">").concat(purchase.customername, "</td>\n                <td class=\"border px-4 py-2\">").concat(purchase.address, "</td>\n                <td class=\"border px-4 py-2\">\n                    <div class=\"inline-block relative w-64\">\n                        <form action=\"/admin/purchase/status\" method=\"POST\">\n                            <input type=\"hidden\" name=\"purchaseId\" value=\"").concat(purchase._id, "\">\n                            <select name=\"status\" onchange=\"this.form.submit()\"\n                                class=\"block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline\">\n                               \n                                <option value=\"prepared\" ").concat(purchase.status === 'prepared' ? 'selected' : '', ">\n                                    Prepared</option>\n                                <option value=\"delivered\" ").concat(purchase.status === 'delivered' ? 'selected' : '', ">\n                                    Delivered\n                                </option>\n                                <option value=\"completed\" ").concat(purchase.status === 'completed' ? 'selected' : '', ">\n                                    Completed\n                                </option>\n                            </select>\n                        </form>\n                        <div\n                            class=\"pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700\">\n                            <svg class=\"fill-current h-4 w-4\" xmlns=\"http://www.w3.org/2000/svg\"\n                                viewBox=\"0 0 20 20\">\n                                <path\n                                    d=\"M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z\" />\n                            </svg>\n                        </div>\n                    </div>\n                </td>\n                <td class=\"border px-4 py-2\">\n                    ").concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(purchase.createdAt).format('hh:mm A'), "\n                </td>\n                \n            </tr>\n        ");
+      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">\n                    \n                    <div>".concat(renderItems(purchase.items), "</div>\n                   \n                </td>\n                \n                <td class=\"border px-4 py-2\">").concat(purchase.purchaseorder, "</td>\n                <td class=\"border px-4 py-2\">").concat(purchase.customername, "</td>\n                <td class=\"border px-4 py-2\">").concat(purchase.address, "</td>\n                <td class=\"border px-4 py-2\">\n                    <div class=\"inline-block relative w-64\">\n                        <form action=\"/admin/purchase/status\" method=\"POST\">\n                            <input type=\"hidden\" name=\"purchaseId\" value=\"").concat(purchase._id, "\">\n                            <select name=\"status\" onchange=\"this.form.submit()\"\n                                class=\"block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline\">\n                               \n                                <option value=\"prepared\" ").concat(purchase.status === 'prepared' ? 'selected' : '', ">\n                                    Prepared</option>\n                                <option value=\"delivered\" ").concat(purchase.status === 'delivered' ? 'selected' : '', ">\n                                    Delivered\n                                </option>\n                                <option value=\"completed\" ").concat(purchase.status === 'completed' ? 'selected' : '', ">\n                                    Completed\n                                </option>\n                            </select>\n                        </form>\n                        <div\n                            class=\"pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700\">\n                            <svg class=\"fill-current h-4 w-4\" xmlns=\"http://www.w3.org/2000/svg\"\n                                viewBox=\"0 0 20 20\">\n                                <path\n                                    d=\"M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z\" />\n                            </svg>\n                        </div>\n                    </div>\n                </td>\n                \n                \n            </tr>\n        ");
     }).join('');
   } // Socket
   // let socket = io()
@@ -2306,15 +2306,24 @@ var hiddenInput = document.querySelector('#hiddenInput');
 var purchase = hiddenInput ? hiddenInput.value : null;
 purchase = JSON.parse(purchase);
 var time = document.createElement('small');
+var updateTime = document.createElement('small');
 
 function updateStatus(purchase) {
   statuses.forEach(function (status) {
     status.classList.remove('step-completed');
-    status.classList.remove('current');
+    status.classList.remove('current'); // updatetime.innerText = moment(purchase.updatedAt).format('DD-MM-YYYY hh:mm A')
+    // status.appendChild(updateTime)
   });
   var stepCompleted = true;
   statuses.forEach(function (status) {
-    var dataProp = status.dataset.status;
+    var dataProp = status.dataset.status; // if(dataProp === purchase.status.stepCompleted){
+    //     stepCompleted = true
+    //     updatetime.innerText = moment(purchase.updatedAt).format('DD-MM-YYYY hh:mm A')
+    //     status.appendChild(updateTime)
+    //     if (status.previousElementSibling) {
+    //         status.previousElementSibling.classList.add('step-completed')
+    //     }
+    // }
 
     if (stepCompleted) {
       status.classList.add('step-completed');
@@ -2322,7 +2331,7 @@ function updateStatus(purchase) {
 
     if (dataProp === purchase.status) {
       stepCompleted = false;
-      time.innerText = moment__WEBPACK_IMPORTED_MODULE_3___default()(purchase.updatedAt).format('hh:mm A');
+      time.innerText = moment__WEBPACK_IMPORTED_MODULE_3___default()(purchase.updatedAt).format('DD-MM-YYYY hh:mm A');
       status.appendChild(time);
 
       if (status.nextElementSibling) {
