@@ -11,7 +11,7 @@ function purchaseController () {
             //     return res.redirect('/order')
             // }
 
-            const { purchaseorder, customername, address, materialusage, colors, fabrics, length} = req.body
+            const { purchaseorder, customername, address, materialusage, colors, fabrics} = req.body
             if(!purchaseorder || !customername || !address || !materialusage || !colors || !fabrics) {
                 req.flash('error', 'All fields are required')
                 return res.redirect('/order')
@@ -29,11 +29,10 @@ function purchaseController () {
                 materialusage,
                 colors,
                 fabrics,
-             length: req.session.order.items.item.length
-                // width: req.body.width,
-                // height: req.body.height 
+             
+                
             })
-            console.log(purchase)
+            
 
             purchase.save().then(result => {
                 Purchase.populate(result, { path: 'prodmanagerId'}, (err, placedPurchase) => {
