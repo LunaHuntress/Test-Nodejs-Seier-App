@@ -23,8 +23,15 @@
                 <tr>
                     <!-- <th class="px-4 py-2 text-left">Purchases</th> -->
                     <th class="px-4 py-2 text-left">Purchase Order Number</th>
+                    <th class="px-4 py-2 text-left">Material Used</th>
+                    <th class="px-4 py-2 text-left">Colors</th>
+                    <th class="px-4 py-2 text-left">Fabrics</th>
+                    <!-- <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left">Dimensions</th>
+                    <th class="px-4 py-2 text-left"></th> -->
                      <th class="px-4 py-2 text-left">Buyer Name</th>
                     <th class="px-4 py-2 text-left">Address</th>
+                    
                     <!-- <th class="px-4 py-2 text-left">Status</th>
                     <th class="px-4 py-2 text-left">Updated Time on Status</th> -->
                     <!-- <th class="px-4 py-2 text-left">Date Ordered</th> -->
@@ -40,12 +47,36 @@
                             <td class="border px-4 py-2">
                                 <a class="link" href="/customer/purchases/<%= purchase._id %>"><%= purchase.purchaseorder %></a>
                             </td>
+                            <td class="border px-4 py-2">
+                                <%= purchase.materialusage %>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= purchase.colors %>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= purchase.fabrics %>
+                            </td>
+                            <!-- <td class="border px-4 py-2"><%= purchase.items.item %></td>
+                            <td class="border px-4 py-2"></td>
+                            <td class="border px-4 py-2"></td> -->
+                            <!-- <td class="border px-4 py-2">
+                                <%= purchase.length %>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= purchase.width %>
+                            </td>
+                            <td class="border px-4 py-2">
+                                <%= purchase.height %>
+                            </td> -->
+
                              <td class="border px-4 py-2">
                                 <%= purchase.customername %>
                             </td> 
                             <td class="border px-4 py-2">
                                 <%= purchase.address %>
                             </td>
+
+                            
                            
                             <!-- <td class="border px-4 py-2">
                                 Preparation for Loading
@@ -54,7 +85,7 @@
                                 <%= time1 = new Date().toLocaleString() %>
                             </td>
                            
-                            <!-- <td class="border px-4 py-2">
+                             <td class="border px-4 py-2">
                                 <%= moment(purchase.createdAt).format('DD-MM-YYYY') %>
                             </td> -->
                         </tr>

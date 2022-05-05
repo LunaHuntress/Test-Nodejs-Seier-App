@@ -26,6 +26,11 @@ export function initAdmin(socket) {
         return parsedItems.map((listItem) => {
             return `
                 <p>${listItem.item.name} - ${listItem.qty} pcs </p>
+                <p>Length: ${listItem.item.length} </p>
+                <p>Width: ${listItem.item.width} </p>
+                <p>Height: ${listItem.item.height} </p>
+                <p>CBM: ${parseFloat(listItem.item.length * listItem.item.width * listItem.item.height / 61024).toFixed(3) } </p>
+                <p>Total CBM: ${parseFloat(listItem.item.length * listItem.item.width * listItem.item.height / 61024).toFixed(3) * listItem.qty } </p>
             `
         }).join('')
     }
@@ -39,7 +44,7 @@ export function initAdmin(socket) {
     //     }).join('')
     // }
 
-    function generateMarkup(purchases) {
+    function generateMarkup(purchases,items) {
         return purchases.map(purchase => {
             return `
                 <tr>
@@ -50,8 +55,13 @@ export function initAdmin(socket) {
                 </td>
                 
                 <td class="border px-4 py-2">${purchase.purchaseorder}</td>
+                <td class="border px-4 py-2">${purchase.materialusage}</td>
+                <td class="border px-4 py-2">${purchase.colors}</td>
+                <td class="border px-4 py-2">${purchase.fabrics}</td>
+
                 <td class="border px-4 py-2">${purchase.customername}</td>
                 <td class="border px-4 py-2">${purchase.address}</td>
+                
                 <td class="border px-4 py-2">
                     <div class="inline-block relative w-64">
                         <form action="/admin/purchase/status" method="POST">

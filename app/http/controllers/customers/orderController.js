@@ -16,9 +16,12 @@ function orderController() {
                 req.session.order = {
                     items: {},
                     totalQty: 0,
-                    // allTotal: 0,
-                    // totalMeasurements: 0
+                     allTotal: 0,
+                     totalMeasurements: 0
                 }
+                // order.totalQty = order.totalQty + 1
+                // order.totalMeasurements = req.body.length * req.body.width * req.body.height / 61024
+                // order.allTotal = order.totalQty * order.totalMeasurements.toFixed(3)
                 
             }
             const order = req.session.order
@@ -28,16 +31,20 @@ function orderController() {
                  if(!order.items[req.body._id]) {
                      order.items[req.body._id] = {
                          item: req.body,
-                         qty: 1
+                         qty: 1,
+                         length: req.body.length,
+                         width: req.body.width,
+                         height: req.body.height,
+                         cbm: req.body.length * req.body.width * req.body.height / 61024 
                      }
                      order.totalQty = order.totalQty + 1
-                    //  order.totalMeasurements = req.body.length * req.body.width * req.body.height/61024 
-                    //  order.allTotal = order.totalQty * order.totalMeasurements.toFixed(3)
+                      order.totalMeasurements = req.body.length * req.body.width * req.body.height/61024 
+                      order.allTotal = order.totalQty * order.totalMeasurements.toFixed(3)
                  } else {
                      order.items[req.body._id].qty = order.items[req.body._id].qty + 1
                      order.totalQty = order.totalQty + 1
-                    //  order.totalMeasurements = req.body.length * req.body.width * req.body.height/61024 
-                    //  order.allTotal = order.totalQty * order.totalMeasurements.toFixed(3)
+                      order.totalMeasurements = req.body.length * req.body.width * req.body.height/61024 
+                      order.allTotal = order.totalQty * order.totalMeasurements.toFixed(3)
                  }
 
 

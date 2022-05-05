@@ -7,8 +7,8 @@ const listSchema = new Schema ({
     image : { type: String, required: true},
     length: { type: Number, required: true },
     width: { type: Number, required: true },
-    height: { type: Number, required: true },
-    measurements: { type: Number, required: true }
+    height: { type: Number, required: true }
+    // measurements: { type: Number, required: true }
 })
 
 const List = mongoose.model('List', listSchema)

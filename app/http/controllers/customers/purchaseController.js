@@ -1,4 +1,5 @@
 const Purchase = require('../../../models/purchase')
+const List = require('../../../models/list')
 const moment = require('moment')
 function purchaseController () {
     return {
@@ -10,11 +11,13 @@ function purchaseController () {
             //     return res.redirect('/order')
             // }
 
-            const { purchaseorder, customername, address } = req.body
-            if(!purchaseorder || !customername || !address) {
+            const { purchaseorder, customername, address, materialusage, colors, fabrics, length} = req.body
+            if(!purchaseorder || !customername || !address || !materialusage || !colors || !fabrics) {
                 req.flash('error', 'All fields are required')
                 return res.redirect('/order')
             }
+
+            
 
             const purchase = new Purchase({
                 role: req.user.role,
@@ -22,8 +25,15 @@ function purchaseController () {
                 items: req.session.order.items,
                 purchaseorder,
                 customername,
-                address 
+                address,
+                materialusage,
+                colors,
+                fabrics,
+             length: req.session.order.items.item.length
+                // width: req.body.width,
+                // height: req.body.height 
             })
+            console.log(purchase)
 
             purchase.save().then(result => {
                 Purchase.populate(result, { path: 'prodmanagerId'}, (err, placedPurchase) => {
