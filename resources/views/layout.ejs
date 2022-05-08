@@ -20,16 +20,19 @@
 
 <body>
     <nav class="container mx-auto flex items-center justify-between py-4 ">
-        <div class="md:w-40 lg:w-48">
-            <a href="/"><img src="/public/img/Seier de Freight Logo.png" alt="logo" 
+         <div class="md:w-40 lg:w-48">
+             <a href="/"><img src="/public/img/Seier de Freight Logo.png" alt="logo" 
                 class="object-left-top w-20 h-20 m-2 inline rounded-2xl "></a>
-        </div>
+        </div> 
 
         <div>
             <ul class="flex items-center">
-                <li class="ml-6"><a href="/">Products</a></li>
+                <!-- <li class="ml-6"><a href="/">Products</a></li> -->
                 <li class="ml-6"><a href="/customers/purchases">Order Records</a></li>
                 <li class="ml-6"><a href="/admin/purchases">Order Summary</a></li>
+                <li class="ml-6"><a href="/userManagement">User Records</a></li>
+                <li class="ml-6"><a href="/itemManagement">Product Catalog</a></li>
+                <li class="ml-6"><a href="/completeRecord">Completed Orders</a></li>
                 <% if(user) { %>
                 <li class="ml-6">
                     <form id="logout" action="/logout" method="POST">

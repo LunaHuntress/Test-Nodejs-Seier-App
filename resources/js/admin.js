@@ -26,11 +26,13 @@ export function initAdmin(socket) {
         return parsedItems.map((listItem) => {
             return `
                 <p>${listItem.item.name} - ${listItem.qty} pcs </p>
-                <p>Length: ${listItem.item.length} </p>
-                <p>Width: ${listItem.item.width} </p>
-                <p>Height: ${listItem.item.height} </p>
+                <p>Material Used: ${listItem.item.materialusage} </p>
+                <p>Colors: ${listItem.item.colors}</p>
+                <p>Fabrics: ${listItem.item.fabrics}</p>
+                <p>Dimensions: ${listItem.item.length} x ${listItem.item.width} x ${listItem.item.height}</p>
                 <p>CBM: ${parseFloat(listItem.item.length * listItem.item.width * listItem.item.height / 61024).toFixed(3) } </p>
                 <p>Total CBM: ${parseFloat(listItem.item.length * listItem.item.width * listItem.item.height / 61024).toFixed(3) * listItem.qty } </p>
+                <br>
             `
         }).join('')
     }
@@ -55,10 +57,6 @@ export function initAdmin(socket) {
                 </td>
                 
                 <td class="border px-4 py-2">${purchase.purchaseorder}</td>
-                <td class="border px-4 py-2">${purchase.materialusage}</td>
-                <td class="border px-4 py-2">${purchase.colors}</td>
-                <td class="border px-4 py-2">${purchase.fabrics}</td>
-
                 <td class="border px-4 py-2">${purchase.customername}</td>
                 <td class="border px-4 py-2">${purchase.address}</td>
                 
@@ -69,13 +67,13 @@ export function initAdmin(socket) {
                             <select name="status" onchange="this.form.submit()"
                                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                                
-                                <option value="prepared" ${purchase.status === 'prepared' ? 'selected' : ''}>
+                                <option value="Prepared" ${purchase.status === 'Prepared' ? 'selected' : ''}>
                                     Prepared</option>
-                                <option value="delivered" ${purchase.status === 'delivered' ? 'selected' : ''}>
-                                    Delivered
+                                <option value="Out for Delivery" ${purchase.status === 'Out for Delivery' ? 'selected' : ''}>
+                                    Out for Delivery
                                 </option>
-                                <option value="completed" ${purchase.status === 'completed' ? 'selected' : ''}>
-                                    Completed
+                                <option value="Delivered" ${purchase.status === 'Delivered' ? 'selected' : ''}>
+                                    Delivered
                                 </option>
                             </select>
                         </form>

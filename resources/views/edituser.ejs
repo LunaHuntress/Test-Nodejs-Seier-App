@@ -1,0 +1,48 @@
+<section class="edituser flex justify-center pt-24">
+    <div class="w-full max-w-xs">
+        <h1 class="font-bold text-lg p-2">Edit User</h1>
+        
+        <form action="" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <input type="hidden" name="user_id" value="<%= users._id %>">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="fname">
+                    Name
+                </label>
+                <input name="name" value="<%= users.name %>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                    leading-tight focus:outline-none focus:shadow-outline" id="fname" type="text"
+                    placeholder="Enter your name">
+
+            </div>
+
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                    Username
+                </label>
+                <input name="username" value="<%= users.username %>" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                        leading-tight focus:outline-none focus:shadow-outline" id="username" type="text"
+                    placeholder="Enter your username">
+
+            </div>
+
+            <!-- <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                    Password
+                </label>
+                <input name="password" value="<%= users.password %>"class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                    leading-tight focus:outline-none focus:shadow-outline" id="password"
+                    type="password" placeholder="***************">
+
+            </div> -->
+            <div class="flex items-center justify-between">
+                <button class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded
+                        focus: outline-none focus:shadow-outline" type="submit">
+                   Save Changes
+                </button>
+
+            </div>
+        </form>
+
+
+    </div>
+</section>

@@ -10,9 +10,9 @@ const purchaseSchema = new Schema({
     },
     items: { type: Object, required: true },
     // allTotal: { type: Number, required: true},
-    materialusage: { type: String, required: true },
-    colors: { type: String, required: true },
-    fabrics: { type: String, required: true },
+    // materialusage: { type: String, required: true },
+    // colors: { type: String, required: true },
+    // fabrics: { type: String, required: true },
     //  length: req.body.length,
     //  width: req.body.width,
     //  height: req.body.height,
@@ -23,6 +23,6 @@ const purchaseSchema = new Schema({
     status: { type: String, default: 'prepared'}
 }, { timestamps: true })
 
-const List = mongoose.model('Purchase', purchaseSchema)
+const Purchase = mongoose.model('Purchase', purchaseSchema)
 
-module.exports = List
+module.exports = Purchase

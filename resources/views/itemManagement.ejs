@@ -1,0 +1,99 @@
+<section class="users light-section">
+    <div class="container mx-auto pt-12">
+        <h1 class="font-bold text-lg mb-4 p-2">Items</h1>
+        <!-- <div>
+            <a href="/adduser" type="button" class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12 object-right">
+                + Add Item
+            </a>
+        </div> -->
+        <table class="w-full table-auto bg-white">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <th class="px-4 py-2 text-left"></th>
+                    <!-- <th class="px-4 py-2 text-left"></th> -->
+                    <th>
+                        <a href="/additem" type="button"
+                            class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12 object-right">
+                            + Add Item
+                        </a>
+                    </th>
+                    
+                </tr>
+                <tr>
+                    <th class="px-4 py-2 text-left">ID</th>
+                    <th class="px-4 py-2 text-left">Name</th>
+                    <th class="px-4 py-2 text-left">Image</th>
+                    <th class="px-4 py-2 text-left">Length</th>
+                    <th class="px-4 py-2 text-left">Width</th>
+                    <th class="px-4 py-2 text-left">Height</th>
+                    <th class="px-4 py-2 text-left">Material Used</th>
+                    <th class="px-4 py-2 text-left">Colors</th>
+                    <th class="px-4 py-2 text-left">Fabrics</th>
+                    <!-- <th class="px-4 py-2 text-left">Action</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <% trackings.forEach(function(tracking) { %>
+                <tr>
+                    <td class="border px-4 py-2">
+                        <%= tracking._id %>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.name %>
+                    </td>
+                    <td class="border px-4 py-2">
+
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.length %>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.width %>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.height %>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.materialusage %>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.colors %>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <%= tracking.fabrics %>
+                    </td>
+                    <!-- <td class=" px-4 py-2">
+                <a href="#" type="button" 
+                class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-6">View</a>
+                
+            </td> -->
+                    <!-- <td class=" px-2 py-1">
+                        <a href="/edititem/<%= tracking._id %>" type="button"
+                            class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12">Edit</a>
+                    </td>
+
+                    <td>
+                        <a href="/<%= tracking._id %>" type="button"
+                            class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12">Delete</a>
+                    </td> -->
+
+                </tr>
+
+                <% }) %>
+
+
+
+            </tbody>
+
+        </table>
+    </div>
+
+</section>

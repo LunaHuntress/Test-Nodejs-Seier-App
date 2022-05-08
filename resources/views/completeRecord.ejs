@@ -1,0 +1,46 @@
+<section class="users light-section">
+    <div class="container mx-auto pt-12">
+        <h1 class="font-bold text-lg mb-4 p-2">Complete Purchases</h1>
+        <table class="w-full table-auto bg-white">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 text-left">Purchase Order</th>
+                    <th class="px-4 py-2 text-left">Buyer Name</th>
+                    <th class="px-4 py-2 text-left">Address</th>
+                    <th class="px-4 py-2 text-left">Status</th>
+                    <th class="px-4 py-2 text-left">Date and Time Completed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% purchases.forEach(function(purchase) { %>
+                    <tr>
+                        <td class="border px-4 py-2">
+                            <%= purchase.purchaseorder %>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <%= purchase.customername %>
+                        </td>
+                        <td class="border px-4 py-2">
+                            <%= purchase.address %>
+                        </td>
+                        <td class="border px-4 py-2">
+                        <%= purchase.status %>
+                        </td>
+
+                        <td class="border px-4 py-2">
+                            <%= purchase.updatedAt %>
+                        </td>
+                       
+                       
+                    </tr>
+
+                    <% }) %>
+
+
+
+            </tbody>
+
+        </table>
+    </div>
+
+</section>

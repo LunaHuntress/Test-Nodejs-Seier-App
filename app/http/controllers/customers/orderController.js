@@ -32,6 +32,9 @@ function orderController() {
                      order.items[req.body._id] = {
                          item: req.body,
                          qty: 1,
+                         materialusage: req.body.materialusage,
+                         colors: req.body.colors,
+                         fabrics: req.body.fabrics,
                          length: req.body.length,
                          width: req.body.width,
                          height: req.body.height,

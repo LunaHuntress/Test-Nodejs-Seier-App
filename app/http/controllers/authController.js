@@ -53,7 +53,7 @@ function authController() {
            }
 
 
-           // Check if email exists
+           // Check if username exists
            User.exists({ username: username}, (err, results) => {
                if(results) {
                    req.flash('error', 'Username already taken')
@@ -85,6 +85,10 @@ function authController() {
         logout(req, res) {
             req.logout()
             return res.redirect('/login')
+        },
+
+        display(req, res){
+           res.render('/userManagement')
         }
     }
 }

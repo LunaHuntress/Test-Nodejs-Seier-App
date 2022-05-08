@@ -7,8 +7,10 @@
         "image": "C1.jpg",
         "length": "17",
         "width": "19",
-        "height": "32"
-        
+        "height": "32",
+        "materialusage": "Steel",
+        "colors": "Blue",
+        "fabrics": "Cotton"
     },
     {
         "_id": {
@@ -18,7 +20,11 @@
         "image": "C2.jpg",
         "length": "17",
         "width": "19",
-        "height": "32"
+        "height": "32",
+        "materialusage": "Plywood",
+        "colors": "Black",
+        "fabrics": "Linen"
+
     },
     {
         "_id": {
@@ -28,7 +34,10 @@
         "image": "C3.jpg",
         "length": "17",
         "width": "19",
-        "height": "32"
+        "height": "32",
+        "materialusage": "Rattan",
+        "colors": "Brown",
+        "fabrics": "Polyester"
     },
     {
         "_id": {
@@ -38,7 +47,10 @@
         "image": "C4.jpg",
         "length": "17",
         "width": "19",
-        "height": "32"
+        "height": "32",
+        "materialusage": "Aluminum",
+        "colors": "Light blue",
+        "fabrics": "Silk"
     },
     {
         "_id": {
@@ -48,7 +60,10 @@
         "image": "C5.jpg",
         "length": "17",
         "width": "19",
-        "height": "32"
+        "height": "32",
+        "materialusage": "Veneer",
+        "colors": "Black",
+        "fabrics": "Acrylic"
     }
     
 ]

@@ -9,6 +9,6 @@ const userSchema = new Schema({
     role: { type: String, default: 'prodmanager' }
 }, { timestamps: true }) 
 
-const List = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
 
-module.exports = List
+module.exports = User

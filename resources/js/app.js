@@ -7,6 +7,12 @@ import moment from 'moment'
 const addToOrder = document.querySelectorAll('.add-to-order')
 let orderCounter = document.querySelector('#orderCounter');
 
+// exports.edituser = ( req, res) => {
+//     axios.get('/userManagement', { params: { id: req.query.id}}).then(function(userData){
+//         res.render('/edituser', user)
+//     })
+//}
+
 function updateOrder(tracking) {
     axios.post('/update-order', tracking).then(res => {
         orderCounter.innerText = res.data.totalQty

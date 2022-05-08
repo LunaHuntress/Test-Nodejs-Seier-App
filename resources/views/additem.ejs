@@ -1,0 +1,107 @@
+<section class="additem flex justify-center pt-24">
+    <div class="w-full max-w-xs">
+        <h1 class="font-bold text-lg p-2">Add Item</h1>
+
+        <form action="/additem" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <!-- <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itemid">
+                    Item ID
+                </label>
+                <input name="_id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                                                    leading-tight focus:outline-none focus:shadow-outline"
+                    id="itemid" type="text" placeholder="Enter Item ID">
+            
+            </div> -->
+
+            <div class="mb-4">
+                
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itemname">
+                    Item Name
+                </label>
+                <input name="name"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                                        leading-tight focus:outline-none focus:shadow-outline" id="itemname"
+                    type="text" placeholder="Enter Item name">
+            
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itemimage">
+                    Item Image
+                </label>
+                <input name="image"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                                                    leading-tight focus:outline-none focus:shadow-outline"
+                    id="itemimage" type="text">
+            
+            </div>
+
+            <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="itemlength">
+                Length
+            </label>
+            <input name="length" 
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                leading-tight focus:outline-none focus:shadow-outline" id="itemlength" type="text" placeholder="Enter Item Length">
+            
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itemwidth">
+                    Width
+                </label>
+                <input name="width" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                            leading-tight focus:outline-none focus:shadow-outline" id="itemwidth" type="text" placeholder="Enter Item Width">
+            
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itemheight">
+                    Height
+                </label>
+                <input name="height" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                            leading-tight focus:outline-none focus:shadow-outline" id="itemheight" type="text" placeholder="Enter Item Height">
+            
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="material">
+                    Material Used
+                </label>
+                <input name="materialusage"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                            leading-tight focus:outline-none focus:shadow-outline" id="material" type="text"
+                    placeholder="Enter material used">
+        
+            </div>
+        
+        
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itmcolors">
+                    Colors
+                </label>
+                <input name="colors"  class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                leading-tight focus:outline-none focus:shadow-outline" id="itemcolors" type="text"
+                    placeholder="Enter colors used">
+        
+            </div>
+        
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="itemfabrics">
+                    Fabrics
+                </label>
+                <input name="fabrics" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 
+                                            leading-tight focus:outline-none focus:shadow-outline" id="itemfabrics" type="text"
+                    placeholder="Enter fabrics used">
+        
+            </div>
+        
+            <div class="flex items-center justify-between">
+                <button class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded
+                                focus: outline-none focus:shadow-outline" type="submit">
+                    Add Item
+                </button>
+        
+            </div>
+        </form>
+
+
+    </div>
+</section>

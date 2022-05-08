@@ -1,13 +1,15 @@
 <section class="order py-16">
 <% if(session.order) { %>
     <div class="order container mx-auto w-1/2">
-        <div class="flex items-center  pb-4">
+        <div class="flex items-center pb-4">
             <img class="w-9 h-10 m-2" src="../../../public/img/2639879_order_icon.png" alt="">
             <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
             <span class="flex-1 ml-32 font-bold text-lg float-right">Dimensions</span>
             
              <span class="flex-1 ml-56 font-bold text-lg float-right">CBM</span>
             <span class="flex-1 ml-20 font-bold text-lg float-right">Total CBM</span>
+
+            
         </div>
 
         <div class="flex items-center border-b border-gray-300 pb-4">
@@ -39,6 +41,7 @@
                 <span class=" ml-4 font-bold text-lg">
                     <%= parseFloat(tracking.item.length * tracking.item.width * tracking.item.height/61024).toFixed(3) * tracking.qty %>m3 </span>
             </div>  
+           
             </div>
             <% } %>
         </div>
@@ -59,12 +62,12 @@
             <% if(user) { %>
             <div>
                 <form action="/purchases" method="POST" class="mt-12">
-                    <input name="materialusage" class="border border-gray-400 p-2 w-1/2 mb-4" type="text"
+                    <!-- <input name="materialusage" class="border border-gray-400 p-2 w-1/2 mb-4" type="text"
                         placeholder="Material Used">
                         <input name="colors" class="border border-gray-400 p-2 w-1/2 mb-4" type="text"
                             placeholder="Colors Used">
                             <input name="fabrics" class="border border-gray-400 p-2 w-1/2 mb-4" type="text"
-                                placeholder="Fabrics Used">
+                                placeholder="Fabrics Used"> -->
 
                     <input name="purchaseorder" class="border border-gray-400 p-2 w-1/2 mb-4" type="text" placeholder="Purchase Order Number">
                      <input name="customername" class="border border-gray-400 p-2 w-1/2 mb-4" type="text" placeholder="Customer Name">

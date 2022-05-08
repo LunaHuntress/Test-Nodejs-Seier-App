@@ -14,57 +14,6 @@ const flash = require('express-flash')
 const MongoDbStore = require('connect-mongo');
 const passport = require('passport');
 const Emitter = require('events')
-// const winston = require('winston')
-// const morgan = require('morgan')
-// const logger = require('./logger')
-// const httpLogger = require('./httpLogger')
-
-// // HttpLogger
-// app.use(httpLogger)
-// // Winston
-// // const consoleTransport = new winston.transports.Console();
-
-// // winston.add(consoleTransport);
-
-// // winston.info('Getting started with Winston');
-// // winston.error('Here is an error message');
-
-// // const logger = winston.createLogger({
-// //     level: 'info',
-// //     format: winston.format.combine(
-// //         winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss', }),
-// //         winston.format.json()
-// //     ),
-// //     transports: [new winston.transports.Console()],
-// // });
-
-// // logger.info('Info message');
-
-// app.get('/errorhandler', (req, res, next) => {
-//     try {
-//         throw new Error('Wowza!')
-//     } catch (error) {
-//         next(error)
-//     }
-// })
-
-// app.use(logErrors)
-// app.use(errorHandler)
-
-// function logErrors(err, req, res, next) {
-//     console.error(err.stack)
-//     next(err)
-// }
-// function errorHandler(err, req, res, next) {
-//     res.status(500).send('Error!')
-// }
-
-
-// // // Logger
-// // logger.info('Info log example');
-
-// // Morgan
-// app.use(morgan('tiny', { stream: logger.stream }));
 
 // Database connection
 // const url = 'mongodb://localhost/tracking';
@@ -111,6 +60,7 @@ app.use(flash())
 app.use('/public', express.static('public'));
 app.use(express.urlencoded({ extended: false}))
 app.use(express.json())
+
 
 
 //Global middleware

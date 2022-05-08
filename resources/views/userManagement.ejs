@@ -1,0 +1,57 @@
+<section class="users light-section">
+    <div class="container mx-auto pt-12">
+        <h1 class="font-bold text-lg mb-4 p-2">Users</h1>
+<table class="w-full table-auto bg-white">
+    <thead>
+        <tr>
+            <th class="px-4 py-2 text-left">ID</th>
+            <th class="px-4 py-2 text-left">Name</th>
+            <th class="px-4 py-2 text-left">Username</th>
+            <!-- <th class="px-4 py-2 text-left">Password</th> -->
+            <th class="px-4 py-2 text-left">Role</th>
+            <!-- <th class="px-4 py-2 text-left">Action</th> -->
+        </tr>
+    </thead>
+    <tbody>
+            <% users.forEach(function(user) { %>
+        <tr>
+            <td class="border px-4 py-2">
+                <%= user._id %>
+            </td>
+            <td class="border px-4 py-2">
+                <%= user.name %>
+            </td>
+            <td class="border px-4 py-2">
+                <%= user.username %>
+            </td>
+            <!-- <td class="border px-4 py-2">
+                <%= user.password %>
+            </td> -->
+            <td class="border px-4 py-2">
+                <%= user.role %>
+            </td>
+            <!-- <td class=" px-4 py-2">
+                <a href="#" type="button" 
+                class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-6">View</a>
+                
+            </td> -->
+             <td class=" px-2 py-1">
+                <a href="/edituser/<%= user._id %>" type="button" class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12">Edit</a>
+            </td>
+
+            <td>
+                <a href="/<%= user._id %>" type="button" class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12">Delete</a>
+            </td>
+
+        </tr>
+
+        <% }) %>
+           
+        
+
+    </tbody>
+
+</table>
+    </div>
+    
+</section>

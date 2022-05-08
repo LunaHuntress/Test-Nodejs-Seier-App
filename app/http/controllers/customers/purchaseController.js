@@ -11,8 +11,8 @@ function purchaseController () {
             //     return res.redirect('/order')
             // }
 
-            const { purchaseorder, customername, address, materialusage, colors, fabrics} = req.body
-            if(!purchaseorder || !customername || !address || !materialusage || !colors || !fabrics) {
+            const { purchaseorder, customername, address} = req.body
+            if(!purchaseorder || !customername || !address ) {
                 req.flash('error', 'All fields are required')
                 return res.redirect('/order')
             }
@@ -25,10 +25,10 @@ function purchaseController () {
                 items: req.session.order.items,
                 purchaseorder,
                 customername,
-                address,
-                materialusage,
-                colors,
-                fabrics,
+                address
+                // materialusage,
+                // colors,
+                // fabrics,
              
                 
             })
