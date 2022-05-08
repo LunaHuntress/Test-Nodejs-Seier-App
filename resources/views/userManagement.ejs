@@ -9,7 +9,7 @@
             <th class="px-4 py-2 text-left">Username</th>
             <!-- <th class="px-4 py-2 text-left">Password</th> -->
             <th class="px-4 py-2 text-left">Role</th>
-            <!-- <th class="px-4 py-2 text-left">Action</th> -->
+            <th class="px-4 py-2 text-right" >Action</th>
         </tr>
     </thead>
     <tbody>
@@ -35,11 +35,11 @@
                 class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-6">View</a>
                 
             </td> -->
-             <td class=" px-2 py-1">
+             <td class=" px-1 py-0">
                 <a href="/edituser/<%= user._id %>" type="button" class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12">Edit</a>
             </td>
 
-            <td>
+            <td class=" px-1 py-0">
                 <a href="/<%= user._id %>" type="button" class="btn-primary px-4 py-2 rounded-full text-white font-bold btn-small mt-12">Delete</a>
             </td>
 

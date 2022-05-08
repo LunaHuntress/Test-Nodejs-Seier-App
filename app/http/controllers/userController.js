@@ -23,7 +23,7 @@ function userController(){
          // Edit User
         async update(req, res) {
              // const id = req.params.id
-              const userData = await User.findByIdAndUpdate({ _id: req.params.id},{ $set:{name:req.body.name, username:req.body.username, password:req.body.password} })
+              const userData = await User.findByIdAndUpdate({ _id: req.params.id},{ $set:{name:req.body.name, username:req.body.username, role:req.body.role} })
              // console.log(userData)
              res.redirect('/userManagement')
          },

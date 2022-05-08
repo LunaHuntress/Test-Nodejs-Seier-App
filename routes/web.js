@@ -74,10 +74,10 @@ function initRoutes(app) {
     // User Management
    
     
-    app.get('/userManagement',  userController().index)
-     app.get('/:id',  userController().delete)
-     app.get('/edituser/:id',  userController().find)
-     app.post('/edituser/:id', userController().update)
+    app.get('/userManagement', admin, userController().index)
+     app.get('/:id', admin, userController().delete)
+     app.get('/edituser/:id', admin, userController().find)
+     app.post('/edituser/:id', admin, userController().update)
     
     
     
