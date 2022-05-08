@@ -20,7 +20,7 @@ const purchaseSchema = new Schema({
     customername: { type: String, required: true},
     address: { type: String, required: true},
     // paymentType: { type: String, default: 'COD'}
-    status: { type: String, default: 'prepared'}
+    status: { type: String, default: 'Prepared'}
 }, { timestamps: true })
 
 const Purchase = mongoose.model('Purchase', purchaseSchema)
